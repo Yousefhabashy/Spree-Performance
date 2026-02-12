@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.6.3">
+  <hashTree>
+    <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="Test Fragment" enabled="false"/>
+    <hashTree>
+      <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="TR - Checkout">
+        <boolProp name="TransactionController.includeTimers">false</boolProp>
+      </TransactionController>
+      <hashTree>
+        <IncludeController guiclass="IncludeControllerGui" testclass="IncludeController" testname="Checkout address">
+          <stringProp name="IncludeController.includepath">E:\Habashy\Automation\apache-jmeter-5.6.3\apache-jmeter-5.6.3\bin\Projects\Spree\Performance testing\fragments\Checkout_Address_Fragment.jmx</stringProp>
+        </IncludeController>
+        <hashTree/>
+        <IncludeController guiclass="IncludeControllerGui" testclass="IncludeController" testname="Select shipping method">
+          <stringProp name="IncludeController.includepath">E:\Habashy\Automation\apache-jmeter-5.6.3\apache-jmeter-5.6.3\bin\Projects\Spree\Performance testing\fragments\Checkout_Shipping_Fragment.jmx</stringProp>
+        </IncludeController>
+        <hashTree/>
+        <IncludeController guiclass="IncludeControllerGui" testclass="IncludeController" testname="Fill payment details">
+          <stringProp name="IncludeController.includepath">E:\Habashy\Automation\apache-jmeter-5.6.3\apache-jmeter-5.6.3\bin\Projects\Spree\Performance testing\fragments\Checkout_Payment_Fragment.jmx</stringProp>
+        </IncludeController>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>

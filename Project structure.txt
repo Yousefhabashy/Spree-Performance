@@ -1,0 +1,52 @@
+Ecommerce-Performance-JMeter/
+│
+├── README.md
+│
+├── jmeter/
+│   │
+│   ├── fragments/
+│   │   ├── Homepage_Fragment.jmx
+│   │   ├── Signup_Fragment.jmx
+│   │   ├── Login_Fragment.jmx
+│   │   ├── Search_Fragment.jmx
+│   │   ├── AddToCart_Fragment.jmx
+│   │   ├── Checkout_Address_Fragment.jmx
+│   │   ├── Checkout_Shipping_Fragment.jmx
+│   │   ├── Checkout_Payment_Fragment.jmx
+│   │   ├── Checkout_Fragment.jmx
+│   │   └── Logout_Fragment.jmx
+│   │
+│   ├── scenarios/
+│   │   ├── 01_Homepage_Load.jmx
+│   │   ├── 02_User_Login.jmx
+│   │   ├── 03_Product_Search.jmx
+│   │   ├── 04_Add_To_Cart.jmx
+│   │   ├── 05_Checkout.jmx
+│   │   └── 06_End_To_End_Flow.jmx
+│   │
+│   ├── data/
+│   │   ├── users.csv
+│   │   ├── products.csv
+│   │   └── addresses.csv
+│   │
+│   └── results/
+│       ├── jtl/
+│       │   ├── E2E_Run(Normal load).jtl        # 300 Users End-to-End
+│       │   ├── E2E_Run(Peek load).jtl          # 750 Users End-to-End
+│       │   ├── Signup_Run.jtl                  # Signup Fragment
+│       │   ├── Login_Run.jtl                   # Login Fragment
+│       │   ├── AddToCart_Run.jtl               # AddToCart Fragment
+│       │   └── Checkout_Run.jtl                # Checkout Fragment
+│       │
+│       └── html-report/                        # HTML reports generated from JTL files
+│
+├── scripts/
+│   ├── run_homepage_test.bat
+│   ├── run_login_test.bat
+│   └── run_end_to_end.bat
+│
+└── docs/
+    ├── Test_Strategy.md
+    ├── Scenarios.md
+    ├── Load_Model.md
+    └── Assumptions_and_Risks.md

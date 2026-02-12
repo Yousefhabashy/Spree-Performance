@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.6.3">
+  <hashTree>
+    <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="Test Fragment" enabled="false"/>
+    <hashTree>
+      <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="TR - Fill payment details">
+        <boolProp name="TransactionController.includeTimers">false</boolProp>
+      </TransactionController>
+      <hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="TR - Fill payment details-1" enabled="true">
+          <stringProp name="HTTPSampler.domain">r.stripe.com</stringProp>
+          <stringProp name="HTTPSampler.port">443</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+          <stringProp name="HTTPSampler.path">/b</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="client_id" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">client_id</stringProp>
+                <stringProp name="Argument.value">stripe-js</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="num_requests" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">num_requests</stringProp>
+                <stringProp name="Argument.value">3</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="events" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                <stringProp name="Argument.name">events</stringProp>
+                <stringProp name="Argument.value">[{&quot;event_name&quot;:&quot;link_funnel.link_rendered&quot;,&quot;created&quot;:1770516348464,&quot;batching_enabled&quot;:true,&quot;event_count&quot;:&quot;4&quot;,&quot;os&quot;:&quot;Windows&quot;,&quot;browserFamily&quot;:&quot;Chrome&quot;,&quot;version&quot;:&quot;c3ec434e35&quot;,&quot;event_id&quot;:&quot;ff82f08f-e649-4e12-a850-2a77c6a29469&quot;,&quot;deploy_status&quot;:&quot;main&quot;,&quot;browserClassification&quot;:&quot;modern&quot;,&quot;browser_classification_v2&quot;:&quot;2024&quot;,&quot;referrer&quot;:&quot;${scheme}://${host}&quot;,&quot;public_key&quot;:&quot;pk_test_51KTj9VFgg8qhioDXRoY3u6wxMyUlZnl1GnoTTTc99bsBpQRP1pxLyPvJLh0SwpzVIb1nUhs4hbSfvg4sWqFWebpL00Bm61TNg8&quot;,&quot;stripe_js_id&quot;:&quot;11103936-e2ef-4a8f-90e4-7aa47d0a620a&quot;,&quot;betas&quot;:&quot;&quot;,&quot;isSafariPrivateMode&quot;:&quot;false&quot;,&quot;deploy_status_time_to_fetch_ms&quot;:&quot;459&quot;,&quot;deploy_status_fetch_failed&quot;:&quot;false&quot;,&quot;cdn_name&quot;:&quot;Cloudfront&quot;,&quot;cdn_pop_dc&quot;:&quot;FRA&quot;,&quot;type&quot;:&quot;signup-email&quot;,&quot;surface&quot;:&quot;payment-element&quot;},{&quot;event_name&quot;:&quot;link_funnel.link_rendered&quot;,&quot;created&quot;:1770516348465,&quot;batching_enabled&quot;:true,&quot;event_count&quot;:&quot;5&quot;,&quot;os&quot;:&quot;Windows&quot;,&quot;browserFamily&quot;:&quot;Chrome&quot;,&quot;version&quot;:&quot;c3ec434e35&quot;,&quot;event_id&quot;:&quot;5485ba20-80f6-442a-96dd-557b9305f5ed&quot;,&quot;deploy_status&quot;:&quot;main&quot;,&quot;browserClassification&quot;:&quot;modern&quot;,&quot;browser_classification_v2&quot;:&quot;2024&quot;,&quot;referrer&quot;:&quot;${scheme}://${host}&quot;,&quot;public_key&quot;:&quot;pk_test_51KTj9VFgg8qhioDXRoY3u6wxMyUlZnl1GnoTTTc99bsBpQRP1pxLyPvJLh0SwpzVIb1nUhs4hbSfvg4sWqFWebpL00Bm61TNg8&quot;,&quot;stripe_js_id&quot;:&quot;11103936-e2ef-4a8f-90e4-7aa47d0a620a&quot;,&quot;betas&quot;:&quot;&quot;,&quot;isSafariPrivateMode&quot;:&quot;false&quot;,&quot;deploy_status_time_to_fetch_ms&quot;:&quot;459&quot;,&quot;deploy_status_fetch_failed&quot;:&quot;false&quot;,&quot;cdn_name&quot;:&quot;Cloudfront&quot;,&quot;cdn_pop_dc&quot;:&quot;FRA&quot;,&quot;type&quot;:&quot;signup-phone&quot;,&quot;surface&quot;:&quot;payment-element&quot;},{&quot;event_name&quot;:&quot;link_funnel.link_rendered&quot;,&quot;created&quot;:1770516348465,&quot;batching_enabled&quot;:true,&quot;event_count&quot;:&quot;6&quot;,&quot;os&quot;:&quot;Windows&quot;,&quot;browserFamily&quot;:&quot;Chrome&quot;,&quot;version&quot;:&quot;c3ec434e35&quot;,&quot;event_id&quot;:&quot;e422aa0e-dbf8-4872-b5aa-699e23ba9791&quot;,&quot;deploy_status&quot;:&quot;main&quot;,&quot;browserClassification&quot;:&quot;modern&quot;,&quot;browser_classification_v2&quot;:&quot;2024&quot;,&quot;referrer&quot;:&quot;${scheme}://${host}&quot;,&quot;public_key&quot;:&quot;pk_test_51KTj9VFgg8qhioDXRoY3u6wxMyUlZnl1GnoTTTc99bsBpQRP1pxLyPvJLh0SwpzVIb1nUhs4hbSfvg4sWqFWebpL00Bm61TNg8&quot;,&quot;stripe_js_id&quot;:&quot;11103936-e2ef-4a8f-90e4-7aa47d0a620a&quot;,&quot;betas&quot;:&quot;&quot;,&quot;isSafariPrivateMode&quot;:&quot;false&quot;,&quot;deploy_status_time_to_fetch_ms&quot;:&quot;459&quot;,&quot;deploy_status_fetch_failed&quot;:&quot;false&quot;,&quot;cdn_name&quot;:&quot;Cloudfront&quot;,&quot;cdn_pop_dc&quot;:&quot;FRA&quot;,&quot;type&quot;:&quot;signup-name&quot;,&quot;surface&quot;:&quot;payment-element&quot;}]</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                <stringProp name="Header.value">cors</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">${scheme}://js.stripe.com/</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Site" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                <stringProp name="Header.value">same-site</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="Origin" elementType="Header">
+                <stringProp name="Header.name">Origin</stringProp>
+                <stringProp name="Header.value">${scheme}://js.stripe.com</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="Sec-GPC" elementType="Header">
+                <stringProp name="Header.name">Sec-GPC</stringProp>
+                <stringProp name="Header.value">1</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua</stringProp>
+                <stringProp name="Header.value">&quot;Not(A:Brand&quot;;v=&quot;8&quot;, &quot;Chromium&quot;;v=&quot;144&quot;, &quot;Brave&quot;;v=&quot;144&quot;</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                <stringProp name="Header.value">?0</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua-platform" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                <stringProp name="Header.value">&quot;Windows&quot;</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/x-www-form-urlencoded</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br, zstd</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                <stringProp name="Header.value">empty</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="TR - Fill payment details-2" enabled="true">
+          <stringProp name="HTTPSampler.domain">r.stripe.com</stringProp>
+          <stringProp name="HTTPSampler.port">443</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+          <stringProp name="HTTPSampler.path">/b</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="client_id" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">client_id</stringProp>
+                <stringProp name="Argument.value">stripe-js</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="num_requests" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">num_requests</stringProp>
+                <stringProp name="Argument.value">2</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="events" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                <stringProp name="Argument.name">events</stringProp>
+                <stringProp name="Argument.value">[{&quot;event_name&quot;:&quot;elements.event.blur&quot;,&quot;created&quot;:1770516350046,&quot;batching_enabled&quot;:true,&quot;event_count&quot;:&quot;75&quot;,&quot;os&quot;:&quot;Windows&quot;,&quot;browserFamily&quot;:&quot;Chrome&quot;,&quot;version&quot;:&quot;c3ec434e35&quot;,&quot;event_id&quot;:&quot;d8847cbe-7d0c-4a14-958a-9489797505c5&quot;,&quot;deploy_status&quot;:&quot;main&quot;,&quot;browserClassification&quot;:&quot;modern&quot;,&quot;browser_classification_v2&quot;:&quot;2024&quot;,&quot;key&quot;:&quot;pk_test_51KTj9VFgg8qhioDXRoY3u6wxMyUlZnl1GnoTTTc99bsBpQRP1pxLyPvJLh0SwpzVIb1nUhs4hbSfvg4sWqFWebpL00Bm61TNg8&quot;,&quot;key_mode&quot;:&quot;test&quot;,&quot;referrer&quot;:&quot;${scheme}://${host}&quot;,&quot;stripe_js_id&quot;:&quot;11103936-e2ef-4a8f-90e4-7aa47d0a620a&quot;,&quot;stripe_obj_id&quot;:&quot;sobj-1656be32-596d-4508-98d6-d14489de2012&quot;,&quot;controller_load_time&quot;:&quot;1770516308433&quot;,&quot;stripe_js_release_train&quot;:&quot;v3&quot;,&quot;wrapper&quot;:&quot;unknown&quot;,&quot;es_module&quot;:&quot;false&quot;,&quot;browser_timezone&quot;:&quot;Africa/Cairo&quot;,&quot;elements_init_source&quot;:&quot;stripe.elements&quot;,&quot;deploy_status_time_to_fetch_ms&quot;:&quot;134&quot;,&quot;deploy_status_fetch_failed&quot;:&quot;false&quot;,&quot;cdn_name&quot;:&quot;Cloudfront&quot;,&quot;cdn_pop_dc&quot;:&quot;FRA&quot;,&quot;intent_id&quot;:&quot;pi_3SyNM6Fgg8qhioDX0yUTGuJx&quot;,&quot;decoupled_intent&quot;:&quot;false&quot;,&quot;merchant&quot;:&quot;acct_1KTj9VFgg8qhioDX&quot;,&quot;elements_session_config_id&quot;:&quot;ee8eb0fd-2867-48ef-93b2-c133514c4d6d&quot;,&quot;amount&quot;:&quot;3799&quot;,&quot;currency&quot;:&quot;usd&quot;,&quot;default_integration&quot;:&quot;link_default_integration_2&quot;,&quot;link_passthrough_mode_enabled&quot;:&quot;false&quot;,&quot;frame_width&quot;:&quot;574&quot;,&quot;element&quot;:&quot;payment&quot;,&quot;element_id&quot;:&quot;payment-770977da-ff51-411d-bb43-cbd6fc6b5fff&quot;},{&quot;event_name&quot;:&quot;elements.get_element_confirming_payment&quot;,&quot;created&quot;:1770516351413,&quot;batching_enabled&quot;:true,&quot;event_count&quot;:&quot;76&quot;,&quot;os&quot;:&quot;Windows&quot;,&quot;browserFamily&quot;:&quot;Chrome&quot;,&quot;version&quot;:&quot;c3ec434e35&quot;,&quot;event_id&quot;:&quot;c383a438-cb0e-46a0-be31-3b2b072f0409&quot;,&quot;deploy_status&quot;:&quot;main&quot;,&quot;browserClassification&quot;:&quot;modern&quot;,&quot;browser_classification_v2&quot;:&quot;2024&quot;,&quot;key&quot;:&quot;pk_test_51KTj9VFgg8qhioDXRoY3u6wxMyUlZnl1GnoTTTc99bsBpQRP1pxLyPvJLh0SwpzVIb1nUhs4hbSfvg4sWqFWebpL00Bm61TNg8&quot;,&quot;key_mode&quot;:&quot;test&quot;,&quot;referrer&quot;:&quot;${scheme}://${host}&quot;,&quot;stripe_js_id&quot;:&quot;11103936-e2ef-4a8f-90e4-7aa47d0a620a&quot;,&quot;stripe_obj_id&quot;:&quot;sobj-1656be32-596d-4508-98d6-d14489de2012&quot;,&quot;controller_load_time&quot;:&quot;1770516308433&quot;,&quot;stripe_js_release_train&quot;:&quot;v3&quot;,&quot;wrapper&quot;:&quot;unknown&quot;,&quot;es_module&quot;:&quot;false&quot;,&quot;browser_timezone&quot;:&quot;Africa/Cairo&quot;,&quot;elements_init_source&quot;:&quot;stripe.elements&quot;,&quot;deploy_status_time_to_fetch_ms&quot;:&quot;134&quot;,&quot;deploy_status_fetch_failed&quot;:&quot;false&quot;,&quot;cdn_name&quot;:&quot;Cloudfront&quot;,&quot;cdn_pop_dc&quot;:&quot;FRA&quot;,&quot;intent_id&quot;:&quot;pi_3SyNM6Fgg8qhioDX0yUTGuJx&quot;,&quot;decoupled_intent&quot;:&quot;false&quot;,&quot;merchant&quot;:&quot;acct_1KTj9VFgg8qhioDX&quot;,&quot;elements_session_config_id&quot;:&quot;ee8eb0fd-2867-48ef-93b2-c133514c4d6d&quot;,&quot;amount&quot;:&quot;3799&quot;,&quot;currency&quot;:&quot;usd&quot;,&quot;default_integration&quot;:&quot;link_default_integration_2&quot;,&quot;link_passthrough_mode_enabled&quot;:&quot;false&quot;,&quot;frame_width&quot;:&quot;1905&quot;,&quot;auto_logged&quot;:&quot;true&quot;}]</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                <stringProp name="Header.value">cors</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">${scheme}://js.stripe.com/</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Site" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                <stringProp name="Header.value">same-site</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="Origin" elementType="Header">
+                <stringProp name="Header.name">Origin</stringProp>
+                <stringProp name="Header.value">${scheme}://js.stripe.com</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="Sec-GPC" elementType="Header">
+                <stringProp name="Header.name">Sec-GPC</stringProp>
+                <stringProp name="Header.value">1</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua</stringProp>
+                <stringProp name="Header.value">&quot;Not(A:Brand&quot;;v=&quot;8&quot;, &quot;Chromium&quot;;v=&quot;144&quot;, &quot;Brave&quot;;v=&quot;144&quot;</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                <stringProp name="Header.value">?0</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua-platform" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                <stringProp name="Header.value">&quot;Windows&quot;</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/x-www-form-urlencoded</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br, zstd</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                <stringProp name="Header.value">empty</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="TR - Fill payment details-3" enabled="true">
+          <stringProp name="HTTPSampler.domain">r.stripe.com</stringProp>
+          <stringProp name="HTTPSampler.port">443</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+          <stringProp name="HTTPSampler.path">/b</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="client_id" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">client_id</stringProp>
+                <stringProp name="Argument.value">stripe-js</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="num_requests" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">num_requests</stringProp>
+                <stringProp name="Argument.value">2</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="events" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                <stringProp name="Argument.name">events</stringProp>
+                <stringProp name="Argument.value">[{&quot;event_name&quot;:&quot;elements.confirm_payment_intent&quot;,&quot;created&quot;:1770516351416,&quot;batching_enabled&quot;:true,&quot;event_count&quot;:&quot;77&quot;,&quot;os&quot;:&quot;Windows&quot;,&quot;browserFamily&quot;:&quot;Chrome&quot;,&quot;version&quot;:&quot;c3ec434e35&quot;,&quot;event_id&quot;:&quot;aa7dd9da-cb11-4c6e-8915-5b6c69765b49&quot;,&quot;deploy_status&quot;:&quot;main&quot;,&quot;browserClassification&quot;:&quot;modern&quot;,&quot;browser_classification_v2&quot;:&quot;2024&quot;,&quot;key&quot;:&quot;pk_test_51KTj9VFgg8qhioDXRoY3u6wxMyUlZnl1GnoTTTc99bsBpQRP1pxLyPvJLh0SwpzVIb1nUhs4hbSfvg4sWqFWebpL00Bm61TNg8&quot;,&quot;key_mode&quot;:&quot;test&quot;,&quot;referrer&quot;:&quot;${scheme}://${host}&quot;,&quot;stripe_js_id&quot;:&quot;11103936-e2ef-4a8f-90e4-7aa47d0a620a&quot;,&quot;stripe_obj_id&quot;:&quot;sobj-1656be32-596d-4508-98d6-d14489de2012&quot;,&quot;controller_load_time&quot;:&quot;1770516308433&quot;,&quot;stripe_js_release_train&quot;:&quot;v3&quot;,&quot;wrapper&quot;:&quot;unknown&quot;,&quot;es_module&quot;:&quot;false&quot;,&quot;browser_timezone&quot;:&quot;Africa/Cairo&quot;,&quot;elements_init_source&quot;:&quot;stripe.elements&quot;,&quot;deploy_status_time_to_fetch_ms&quot;:&quot;134&quot;,&quot;deploy_status_fetch_failed&quot;:&quot;false&quot;,&quot;cdn_name&quot;:&quot;Cloudfront&quot;,&quot;cdn_pop_dc&quot;:&quot;FRA&quot;,&quot;intent_id&quot;:&quot;pi_3SyNM6Fgg8qhioDX0yUTGuJx&quot;,&quot;decoupled_intent&quot;:&quot;false&quot;,&quot;merchant&quot;:&quot;acct_1KTj9VFgg8qhioDX&quot;,&quot;elements_session_config_id&quot;:&quot;ee8eb0fd-2867-48ef-93b2-c133514c4d6d&quot;,&quot;amount&quot;:&quot;3799&quot;,&quot;currency&quot;:&quot;usd&quot;,&quot;default_integration&quot;:&quot;link_default_integration_2&quot;,&quot;link_passthrough_mode_enabled&quot;:&quot;false&quot;,&quot;frame_width&quot;:&quot;1905&quot;,&quot;auto_logged&quot;:&quot;true&quot;,&quot;element&quot;:&quot;payment&quot;},{&quot;event_name&quot;:&quot;elements.confirm_payment_intent.type.payment_method_data&quot;,&quot;created&quot;:1770516351471,&quot;batching_enabled&quot;:true,&quot;event_count&quot;:&quot;78&quot;,&quot;os&quot;:&quot;Windows&quot;,&quot;browserFamily&quot;:&quot;Chrome&quot;,&quot;version&quot;:&quot;c3ec434e35&quot;,&quot;event_id&quot;:&quot;1ffcf0a9-4668-4327-a132-8c372872c053&quot;,&quot;deploy_status&quot;:&quot;main&quot;,&quot;browserClassification&quot;:&quot;modern&quot;,&quot;browser_classification_v2&quot;:&quot;2024&quot;,&quot;key&quot;:&quot;pk_test_51KTj9VFgg8qhioDXRoY3u6wxMyUlZnl1GnoTTTc99bsBpQRP1pxLyPvJLh0SwpzVIb1nUhs4hbSfvg4sWqFWebpL00Bm61TNg8&quot;,&quot;key_mode&quot;:&quot;test&quot;,&quot;referrer&quot;:&quot;${scheme}://${host}&quot;,&quot;stripe_js_id&quot;:&quot;11103936-e2ef-4a8f-90e4-7aa47d0a620a&quot;,&quot;stripe_obj_id&quot;:&quot;sobj-1656be32-596d-4508-98d6-d14489de2012&quot;,&quot;controller_load_time&quot;:&quot;1770516308433&quot;,&quot;stripe_js_release_train&quot;:&quot;v3&quot;,&quot;wrapper&quot;:&quot;unknown&quot;,&quot;es_module&quot;:&quot;false&quot;,&quot;browser_timezone&quot;:&quot;Africa/Cairo&quot;,&quot;elements_init_source&quot;:&quot;stripe.elements&quot;,&quot;deploy_status_time_to_fetch_ms&quot;:&quot;134&quot;,&quot;deploy_status_fetch_failed&quot;:&quot;false&quot;,&quot;cdn_name&quot;:&quot;Cloudfront&quot;,&quot;cdn_pop_dc&quot;:&quot;FRA&quot;,&quot;intent_id&quot;:&quot;pi_3SyNM6Fgg8qhioDX0yUTGuJx&quot;,&quot;decoupled_intent&quot;:&quot;false&quot;,&quot;merchant&quot;:&quot;acct_1KTj9VFgg8qhioDX&quot;,&quot;elements_session_config_id&quot;:&quot;ee8eb0fd-2867-48ef-93b2-c133514c4d6d&quot;,&quot;amount&quot;:&quot;3799&quot;,&quot;currency&quot;:&quot;usd&quot;,&quot;default_integration&quot;:&quot;link_default_integration_2&quot;,&quot;link_passthrough_mode_enabled&quot;:&quot;false&quot;,&quot;frame_width&quot;:&quot;1905&quot;,&quot;livemode&quot;:&quot;false&quot;}]</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                <stringProp name="Header.value">cors</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">${scheme}://js.stripe.com/</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Site" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                <stringProp name="Header.value">same-site</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="Origin" elementType="Header">
+                <stringProp name="Header.name">Origin</stringProp>
+                <stringProp name="Header.value">${scheme}://js.stripe.com</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="Sec-GPC" elementType="Header">
+                <stringProp name="Header.name">Sec-GPC</stringProp>
+                <stringProp name="Header.value">1</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua</stringProp>
+                <stringProp name="Header.value">&quot;Not(A:Brand&quot;;v=&quot;8&quot;, &quot;Chromium&quot;;v=&quot;144&quot;, &quot;Brave&quot;;v=&quot;144&quot;</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                <stringProp name="Header.value">?0</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua-platform" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                <stringProp name="Header.value">&quot;Windows&quot;</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/x-www-form-urlencoded</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br, zstd</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                <stringProp name="Header.value">empty</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="TR - Fill payment details-4" enabled="true">
+          <stringProp name="TestPlan.comments">Detected the start of a redirect chain</stringProp>
+          <stringProp name="HTTPSampler.port">443</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+          <stringProp name="HTTPSampler.path">/stripe/payment_intents/11758</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="payment_intent" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">payment_intent</stringProp>
+                <stringProp name="Argument.value">pi_3SyNM6Fgg8qhioDX0yUTGuJx</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="payment_intent_client_secret" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">payment_intent_client_secret</stringProp>
+                <stringProp name="Argument.value">pi_3SyNM6Fgg8qhioDX0yUTGuJx_secret_234JHbdcqflVKKELmZmFekV6B</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="redirect_status" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">redirect_status</stringProp>
+                <stringProp name="Argument.value">succeeded</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                <stringProp name="Header.value">navigate</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">${scheme}://${host}/checkout/N6TiH625G8R1NtdXnN7T7muJZ214aRMLErP/payment</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Site" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                <stringProp name="Header.value">same-origin</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-User" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-User</stringProp>
+                <stringProp name="Header.value">?1</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8</stringProp>
+              </elementProp>
+              <elementProp name="Sec-GPC" elementType="Header">
+                <stringProp name="Header.name">Sec-GPC</stringProp>
+                <stringProp name="Header.value">1</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua</stringProp>
+                <stringProp name="Header.value">&quot;Not(A:Brand&quot;;v=&quot;8&quot;, &quot;Chromium&quot;;v=&quot;144&quot;, &quot;Brave&quot;;v=&quot;144&quot;</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                <stringProp name="Header.value">?0</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua-platform" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                <stringProp name="Header.value">&quot;Windows&quot;</stringProp>
+              </elementProp>
+              <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
+                <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
+                <stringProp name="Header.value">1</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br, zstd</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                <stringProp name="Header.value">document</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="TR - Fill payment details-5" enabled="true">
+          <stringProp name="HTTPSampler.port">443</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+          <stringProp name="HTTPSampler.path">/checkout/N6TiH625G8R1NtdXnN7T7muJZ214aRMLErP/complete</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                <stringProp name="Header.value">navigate</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">${scheme}://${host}/checkout/N6TiH625G8R1NtdXnN7T7muJZ214aRMLErP/payment</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Site" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                <stringProp name="Header.value">same-origin</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-User" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-User</stringProp>
+                <stringProp name="Header.value">?1</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8</stringProp>
+              </elementProp>
+              <elementProp name="Sec-GPC" elementType="Header">
+                <stringProp name="Header.name">Sec-GPC</stringProp>
+                <stringProp name="Header.value">1</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua</stringProp>
+                <stringProp name="Header.value">&quot;Not(A:Brand&quot;;v=&quot;8&quot;, &quot;Chromium&quot;;v=&quot;144&quot;, &quot;Brave&quot;;v=&quot;144&quot;</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                <stringProp name="Header.value">?0</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua-platform" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                <stringProp name="Header.value">&quot;Windows&quot;</stringProp>
+              </elementProp>
+              <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
+                <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
+                <stringProp name="Header.value">1</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br, zstd</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                <stringProp name="Header.value">document</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
